@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { graphql, gql } from "react-apollo";
 import Link from "./Link";
 
-class LinkList extends Component {
+class LinkList extends Component {  
   render() {
     // 1
+    console.log(this.props.allLinksQuery);
     if (this.props.allLinksQuery && this.props.allLinksQuery.loading) {
       return <div>Loading</div>;
     }

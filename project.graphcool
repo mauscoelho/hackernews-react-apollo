@@ -1,0 +1,32 @@
+# project: cj8uzx7tu04he0117i2o6m6eg
+# version: 4
+
+type File @model {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  updatedAt: DateTime!
+  url: String! @isUnique
+}
+
+type Link @model {
+  createdAt: DateTime!
+  description: String!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+  url: String!
+  postedBy: User @relation(name: "UsersLinks")
+}
+
+type User @model {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  email: String @isUnique
+  updatedAt: DateTime!
+  name: String!
+  password: String
+  links: [Link!]! @relation(name: "UsersLinks")
+}
