@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
-import { GC_USER_ID, GC_AUTH_TOKEN } from '../constants'
+import { GC_USER_ID, GC_AUTH_TOKEN } from "../constants";
 
 class Header extends Component {
   render() {
@@ -13,6 +13,10 @@ class Header extends Component {
           <Link to="/" className="ml1 no-underline black">
             new
           </Link>
+          <div className="ml1">|</div>
+          <Link to="/search" className="ml1 no-underline black">
+            search
+          </Link> 
           {userId && (
             <div className="flex">
               <div className="ml1">|</div>
